@@ -1,33 +1,38 @@
-const hourEl = document.getElementById("hour");
-const minuteEL = document.getElementById("minutes");
-const secondEl = document.getElementById("seconds");
-const ampmEl = document.getElementById("ampm");
+let progress = document.getElementById("progress");
+let song = document.getElementById("song");
+let ctrlIcon = document.getElementById("ctrlIcon");
 
-function updateClock(){
-  let h = new Date().getHours();
-  let m = new Date().getMinutes();
-  let s = new Date().getSeconds();
-  let ampm =  "AM";
+song.onloadedmetadata = function() {
+  progress.max = song.duration;
+  progress.value = song.currentTime;
 
-  if(h > 12) {
-    h = h - 12;
-    ampm = "PM";
-  }
-
-
-h = h <10 ? "0" + h : h;
-m = m <10 ? "0" + m : m;
-
-s = s <10 ? "0" + s : s;
-
-  hourEl.innerText = h;
-  minuteEL.innerText = m;
-  secondEl.innerText = s;
-  ampmEl, (innerText = ampm);
-  setTimeout(()=>{
-    updateClock()
-
-  }, 1000)
 }
 
-updateClock();
+function playPause(){
+  if(ctrlIcon.classList.contains("fa-pause")) {
+    song.pause();
+    ctrlIcon.classList.remove("fa-pause");
+    ctrlIcon.classList.add("fa-play");
+
+  }
+  else{
+    song.play();
+    ctrlIcon.classList.add("fa-pause");
+    ctrlIcon.classList.remove("fa-play");
+
+    }
+  }
+
+  if(song.play()){
+    setInterval(()=>{
+      progress.value = song.currentTime;
+    },500);
+
+  }
+
+  progress.onchange = function(){
+    song.play();
+    song.currentTime = progress.value;
+    ctrlIcon.classList.add("fa-pause");
+    ctrlIcon.classList.remove("fa-play");
+  }
