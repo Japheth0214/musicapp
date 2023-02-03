@@ -1,61 +1,71 @@
-body {
+*{
   margin: 0;
-  font-family:sans-serif;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  padding: 0;
+  font-family: sans-serif;
+}
+.container {
   height: 100vh;
-  justify-content: center;
-  background-image: url("https://images.unsplash.com/photo-1518066000714-58c45f1a2c0a?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80");
+  width: 100%;
+  background-image: url(music.icon/image.png);
   background-size: cover;
-  overflow: hidden;
-}
-
-h2{
-  text-transform: uppercase;
-  letter-spacing: 4px;
-  font-size: 14px;
-  text-align: center;
-  color: white
-}
-
-.clock {
-  display: flex;
-}
-
-.clock div{
-  margin: 5px;
+  background-position: center;
   position: relative;
 }
-
-.clock span {
-  width: 100px;
-  height: 80px;
-  background-color: slategray;
-  opacity: 8;
-  color: black;
+.navbar{
+  width: 88%;
+  margin:auto;
+  padding: 15px 0;
   display:flex;
-  justify-content: center;
   align-items: center;
-  font-size: 50px;
-  text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+  justify-content: space-between;
+}
+.logo{
+  width: 140px;
+  cursor: pointer;
+}
+.navbar ul li {
+  list-style: none;
+  display: inline-block;
+  margin: 0 15px;
+}
+.navbar ul li a {
+  text-decoration: none;
+  color: #5f5f5f;
 }
 
-.clock .text{
-  height: 30px;
-  font-size: 10px;
-  text-transform: uppercase;
-  letter-spacing: 2px;
-  background: white;
-  opacity: 0.8;
+.music-player{
+  background: #ffe0e5;
+  width: 400px;
+  padding: 25px 35px;
+  text-align: center;
 }
-
-.clock #ampm{
-  bottom: 0;
-  position: absolute;
-  width: 60px;
-  height: 30px;
+nav {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 30px;
+}
+ nav .circle{
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  line-height: 40px;
+  background: #fff;
+  color: #f53192;
+  box-shadow: 0 5px 10px rgba(225, 26, 26, 0.22);
+ }
+ .song-img{
+  width: 220px;
+  border-radius: 50%;
+  border: 8px solid #fff;
+  box-shadow: 0 10px 60px rgba(225, 26, 26, 0.22);
+ }
+ .music-player h1{
   font-size: 20px;
-  background: gray;
-  color: whitesmoke;
-}
+  font-weight: 400;
+  color: #333;
+  margin-top: 20px;
+ }
+ .music-player p{
+  font-size: 14px;
+  color: #333;
+ }
