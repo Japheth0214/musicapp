@@ -1,6 +1,6 @@
-let progress = document.getElementById("progress");
-let song = document.getElementById("song");
-let ctrlIcon = document.getElementById("ctrlIcon");
+const progress = document.getElementById("progress");
+const song = document.getElementById("song");
+const ctrlIcon = document.getElementById("ctrlIcon");
 
 song.onloadedmetadata = function() {
   progress.max = song.duration;
@@ -21,7 +21,7 @@ function playPause(){
     ctrlIcon.classList.remove("fa-play");
 
     }
-  }
+  }  
 
   if(song.play()){
     setInterval(()=>{
